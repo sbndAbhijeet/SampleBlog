@@ -81,4 +81,50 @@ We can also use storage services for backup or reuse
 ### Similary made for Auth.js for authentication
 
 # Create Store
+    use create Redux and do 
+    initial state: status, userData
+    make slice and define login logout functions
+    make store and import reducers
+    
+    use them by useDispatch and useSelector
 
+
+# Building pages
+
+## Header
+    make different buttons to be available according to login or logout (Navigator is used)
+    Make LogoutBtn
+    
+### Navigator
+This is how we use navigator
+
+    const navigate = useNavigate()
+    const navItems = [
+    {
+    name: 'Home',
+    slug: '/',
+    active: true
+    },
+    {
+    name: 'Login',
+    slug: '/login',
+    active: !authStatus
+    },
+    {
+    name: 'SignUp',
+    slug: '/signup',
+    active: !authStatus
+    },
+    {
+    name: 'All Posts',
+    slug: '/all-posts',
+    active: authStatus
+    },
+    {
+    name: 'Add Post',
+    slug: '/add-post',
+    active: authStatus
+    }
+    ]
+
+    onClick={() => navigate(item.slug)}
